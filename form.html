@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Form</title>
 </head>
+
 <body>
-  
+  <h1 id="title">Formulário Trybe Travel</h1>
+  <form id="main-form">
+    <!-- <label id="fullName">Nome completo:</label> -->
+    <input type="text" id="fullName" name="fullName" min="10" max="40">
+    <!--  <label id="email">e-mail:</label> -->
+    <input type="email" id="email" min="10" max="50">
+
+    <label>Destino Preferido:</label>
+    <br>
+    <input type="radio" id="city" name="destinations" value="Cidade">
+    <label for="city">Cidade</label>
+
+    <input type="radio" id="countryside" name="destinations" value="Campo">
+    <label for="countryside">Campo</label>
+
+    <input type="radio" id="beach" name="destinations" value="Praia">
+    <label for="beach">Praia</label>
+
+    <input type="radio" id="mountain" name="destinations" value="Montanha">
+    <label for="mountain">Montanha</label>
+
+    <br>
+
+    <textarea id="question" max="500"></textarea>
+    <input type="date" id="date">
+    <input type="checkbox" id="promo">
+    <input type="checkbox" id="agreement">
+
+    <button type="submit" id="submit-btn">Enviar</button>
+    <button type="button" id="clear-btn" onclick="limparCampos()">Limpar</button>
+  </form>
+
+  <script>
+    function limparCampos() {
+      const elementosDeEntrada = document.getElementsByTagName('input');
+
+      for (let i = 0; i < elementosDeEntrada.length; i += 1) {
+        elementosDeEntrada[i].value = '';
+      }
+    }
+  </script>
+
 </body>
+
+<script src="script.js"></script>
+
 </html>
